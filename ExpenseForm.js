@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ExpenseForm.css'
 const ExpenseForm = () => {
+    const [title,setTitle]=useState('');
+    const [price,setPrice]=useState('');
+    const[date,setDate]=useState('');
     const addtitle=(e)=>{
-        console.log(e.target.value);
+        setTitle(e.target.value);
     }
     const addPrice=(e)=>{
-        console.log(e.target.value);
+        setPrice(e.target.value);
     }
     const addDate=(e)=>{
-        console.log(e.target.value);
+        setDate(e.target.value);
     }
   return (
 <div className="form-style-6">
