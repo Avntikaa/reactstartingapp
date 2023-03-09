@@ -4,6 +4,8 @@ const ExpenseForm = () => {
     const [title,setTitle]=useState('');
     const [price,setPrice]=useState('');
     const[date,setDate]=useState('');
+
+
     const addtitle=(e)=>{
         setTitle(e.target.value);
     }
@@ -13,6 +15,16 @@ const ExpenseForm = () => {
     const addDate=(e)=>{
         setDate(e.target.value);
     }
+
+    const onSubmitFormDeatils=(e)=>{
+        e.preventDefault();
+        const newexpense={
+            title:title,
+            price:price,
+            date:date
+        }
+        console.log(newexpense);
+    }
   return (
 <div className="form-style-6">
 <h1>Add Expense</h1>
@@ -21,7 +33,7 @@ const ExpenseForm = () => {
 <input type="number" onChange={addPrice} placeholder="Enter Price" />
 <input type="date"  onChange={addDate} placeholder="Enter Date" />
 
-<button type="submit" value="Send" />
+<button type="submit" onClick={onSubmitFormDeatils}>SEND</button>
 </form>
 </div>
   )
