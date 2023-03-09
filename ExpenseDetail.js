@@ -1,4 +1,5 @@
- function ExpenseDetail(props){
+ import './ExpenseDetail.css'
+const ExpenseDetail=(props)=>{
     return (
  <div className='expense-item__description'>
         <h2>{props.title}</h2>
