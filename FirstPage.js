@@ -18,17 +18,26 @@ const filteredExpenses = arr.filter((expense) => {
     return dt.getFullYear().toString() === filteredYear;
   });
 
+  
 
   return( 
   <div className='expenses'>
           <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-
- {
-filteredExpenses.map((item,index)=>{
+          {
+(filteredExpenses.length===0)?<h1>No EXpenses Found</h1>:
+(filteredExpenses.length===1)?filteredExpenses.map((item,index)=>{
+         return (
+          <>
+         <ExpenseItem key={index} item={item.title} date={item.Date} price={item.price} category={item.locationofExpense}/>
+     <h2>Add More Expense</h2>
+     </>)
+    }):
+     filteredExpenses.map((item,index)=>{
          return (
          <ExpenseItem key={index} item={item.title} date={item.Date} price={item.price} category={item.locationofExpense}/>)
-     })
-  }
+        })
+    }
+  
       </div>
   )
 }
