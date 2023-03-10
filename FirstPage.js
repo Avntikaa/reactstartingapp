@@ -19,7 +19,7 @@ const FirstPage=(props)=>{
  {
  arr.map((item,index)=>{
          return (
-         <ExpenseItem item={item.title} date={item.Date} price={item.price} category={item.locationofExpense}/>)
+         <ExpenseItem key={index} item={item.title} date={item.Date} price={item.price} category={item.locationofExpense}/>)
      })
   }
       </div>
