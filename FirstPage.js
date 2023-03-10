@@ -8,7 +8,6 @@ const FirstPage=(props)=>{
   <div className='expenses'>
  {
  arr.map((item,index)=>{
-  console.log(item);
          return (
          <ExpenseItem item={item.title} date={item.Date} price={item.price} category={item.locationofExpense}/>)
      })

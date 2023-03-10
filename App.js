@@ -1,10 +1,24 @@
 import './App.css';
-import ExpenseItem from './components/ExpenseItem'
+import React, { useState } from 'react'
 
-function App() {
+import ExpenseForm from './components/ExpenseForm';
+import FirstPage from './components/FirstPage';
+const App=()=>{
+      const[expensearr,setExpensearr]=useState([]);
+
+  const getuserdata=(ele)=>{
+   
+    setExpensearr((prevexpense)=>{
+      return [ele,...prevexpense];
+    });
+  }
   return (
-    <ExpenseItem/>
-  );
-}
+    <div>
+      <ExpenseForm getdata={getuserdata}/>
+          <FirstPage expense={expensearr}/>
 
+    </div>
+    
+  )
+  }
 export default App;
