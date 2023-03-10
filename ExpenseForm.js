@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './ExpenseForm.css'
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
     const [title,setTitle]=useState('');
     const [price,setPrice]=useState('');
     const[date,setDate]=useState('');
@@ -23,7 +23,7 @@ const ExpenseForm = () => {
             price:price,
             date:date
         }
-        console.log(newexpense);
+        props.getdata(newexpense);
     }
   return (
 <div className="form-style-6">
